@@ -1,0 +1,36 @@
+1
+3
+Pizza Lombo
+35,00
+1
+3
+Refrigerante
+10,00
+1
+1
+Pizza Calabresa
+29,00
+1
+5
+Frango
+35,00
+2
+3
+2
+1
+2
+8
+1
+8
+Pizza baiana
+34,20
+2
+8
+3
+4
+5
+8
+0
+
+
+
