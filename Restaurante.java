@@ -46,7 +46,8 @@ public class Restaurante {
                     System.out.println("Valor: R$" + pedido.getValor());
                 }
             }else if(opcao == 4){
-                List<Pedido> p = pedidos;
+                List<Pedido> p = new ArrayList<>();
+                p.addAll(pedidos);
                 Collections.sort(p);
                 for (Pedido pedido: p){
                     System.out.println("=-=-=-=-=-=-=");
