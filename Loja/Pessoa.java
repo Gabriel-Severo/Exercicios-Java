@@ -32,4 +32,6 @@ public abstract class Pessoa {
         return sexo;
     }
     
+    public abstract String exibirFicha();
+    
 }

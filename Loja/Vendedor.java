@@ -30,4 +30,9 @@ public class Vendedor extends Pessoa{
     public String toString(){
         return "Id: " + getId() + " Nome: " + getNome() + " Sexo: " + getSexo() + " Comissão: " + comissao + " Salário Base: " + salarioBase;
     }
+    
+    @Override
+    public String exibirFicha(){
+        return String.format("%5d %30s %c %.2f", getId(), getNome(), getSexo(), getComissao());
+    }
 }

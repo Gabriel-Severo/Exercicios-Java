@@ -15,4 +15,9 @@ public class Cliente extends Pessoa{
     public String toString(){
         return "Id: " + getId() + " Nome: " + getNome() + " Sexo: " + getSexo() + " Vip: " + vip;
     }
+    
+    @Override
+    public String exibirFicha(){
+        return String.format("%5d %30s %c %3s", getId(), getNome(), getSexo(), getVip() ? "VIP" : "");
+    }
 }
