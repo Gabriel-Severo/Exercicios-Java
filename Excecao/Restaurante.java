@@ -28,8 +28,8 @@ public class Restaurante {
                 try{
                     Pedido p = new Pedido(mesa, pedido, valor);
                     pedidos.add(p);
-                }catch(ZeroValueException e){
-                    System.out.println("O valor do pedido ou do valor não pode ser zero.\nTente novamente");
+                }catch(InvalidNumberException e){
+                    System.err.println("O número da mesa ou o valor do pedido não devem ser menores que 1");
                     continue;
                 }
             }else if(opcao == 2){

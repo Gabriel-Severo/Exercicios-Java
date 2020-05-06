@@ -10,8 +10,8 @@ public class Pedido implements Comparable<Pedido>{
     }
     
     public void setMesa(int mesa){
-        if(mesa == 0){
-            throw new ZeroValueException();
+        if(mesa < 1){
+            throw new InvalidNumberException();
         }
         this.mesa = mesa;
     }
@@ -29,13 +29,13 @@ public class Pedido implements Comparable<Pedido>{
     }
     
     public double getValor(){
-        if(valor == 0){
-            throw new ZeroValueException();
-        }
         return valor;
     }
 
     public void setValor(double valor){
+        if(valor < 1){
+            throw new InvalidNumberException();
+        }
         this.valor = valor;
     }
 
