@@ -1,5 +1,7 @@
 public class ContaException extends Exception{
-    public ContaException(String message){
-        super(message);
+    private double saldo;
+    public ContaException(String message, double saldo){
+        super(message + " " + saldo);
+        this.saldo = saldo;
     }
 }

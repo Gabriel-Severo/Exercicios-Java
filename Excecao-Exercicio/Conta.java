@@ -11,7 +11,7 @@ public class Conta {
 
     public void saca(double valor) throws ContaException{
         if (valor > saldo){
-            throw new ContaException("O valor informado é maior do que o saldo");
+            throw new ContaException("O valor informado é maior do que o saldo", saldo);
         }
         this.saldo -= valor;
     }
