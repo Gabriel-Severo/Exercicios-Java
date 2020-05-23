@@ -35,6 +35,8 @@ public class Data {
 
     public String toString() {
         boolean invalido = false;
+        String anoString = Integer.toString(ano);
+
         //Verifica se a data é valido
         if (dia > 31 || dia < 1 || mes > 12 || mes < 1 || ano < 1 || dia > 29 && mes == 2)
             invalido = true;
@@ -44,6 +46,14 @@ public class Data {
         //Verifica se o mes termina em 30 ou 31
         else if(mes < 8 && mes % 2 == 0 && dia == 31 || mes > 9 && mes % 2 != 0 && dia == 31)
             invalido = true;
-        return dia + "/" + mes + "/" + ano + (invalido ? " (data inválida!)." : "");
+
+        // Adiciona 0 para ficar no forma YYYY, caso o ano seja 880 por exemplo.
+        for(int i = anoString.length(); i < 4; i++) 
+            anoString = "0" + ano;
+
+        return (dia < 10 ? "0" + dia : dia) +
+                "/" + (mes < 10 ? "0" + mes : mes) +
+                "/" + anoString +
+                (invalido ? " (data inválida!)." : "");
     }
 }
