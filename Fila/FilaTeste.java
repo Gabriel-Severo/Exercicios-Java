@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class FilaTeste <E>{
+public class FilaTeste {
 
     public static <E> E convertObject(Object object){
         return (E) object;
@@ -23,17 +23,13 @@ public class FilaTeste <E>{
                 System.out.println("Qual o tipo da fila a ser criado ?");
                 System.out.println("1. Double\n2. Integer\n3. Character");
                 tipo = s.nextInt();
+                if(tipo != 1 && tipo != 2 && tipo != 3) {
+                    System.out.println("Impossível criar um vetor desse tipo");
+                }
             }else if(opcao == 1) {
                 System.out.println("Digite o tamanho do vetor.");
                 int tamanho = s.nextInt();
-                if(tipo == 1)
-                    f = (Fila<E>) new Fila<Double>(tamanho);
-                else if(tipo == 2)
-                    f = (Fila<E>) new Fila<Integer>(tamanho);
-                else if(tipo == 3)
-                    f = (Fila<E>) new Fila<Character>(tamanho);
-                else
-                    System.out.println("Impossível criar um vetor desse tipo.");
+                f = new Fila<>(tamanho);
             }else if(opcao == 2) {
                 System.out.println("Valor a ser enfileirado");
                 try {
@@ -42,14 +38,20 @@ public class FilaTeste <E>{
                     else if(tipo == 2)
                         f.enfileirar(convertObject(s.nextInt()));
                     else if(tipo == 3)
-                        f.enfileirar(convertObject(s.next()));
+                        f.enfileirar(convertObject(s.next().charAt(0)));
+                    else
+                        System.out.println("O tipo da fila escolhido e inválido");
                 }catch(Exception e){
-                    System.out.println(e);
+                    System.err.println(e);
                 }
             }else if(opcao == 3) {
-                System.out.println(f.desenfileirar());
+                try {
+                    System.out.println(f.desenfileirar());                    
+                }catch(Exception e) {
+                    System.err.println(e);
+                }
             }else if(opcao == 4) {
-                f.mostrar();
+                f.mostrarFila();
             }
         }while(opcao != 5);
     }

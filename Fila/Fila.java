@@ -31,7 +31,7 @@ public class Fila <E> {
             if(elementos[i+1] == null) {
                 break;
             }
-            if(i == elementos.length-2 ){
+            if(i == elementos.length-2){
                 elementos[i+1] = null;
             }
         }
@@ -39,7 +39,7 @@ public class Fila <E> {
         return valor;
     }
 
-    public void mostrar() {
+    public void mostrarFila() {
         for(int i = 0; i < elementos.length && elementos[i] != null; i++){
             System.out.println(elementos[i]);
         }
