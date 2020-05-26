@@ -15,7 +15,7 @@ public class Pilha <E> {
     }
 
     public void empilhar(E valor) throws Exception{
-        if(topo == tamanho){
+        if(topo == elementos.length){
             throw new Exception(String.format("Pilha está cheia %s", valor));
         }
         elementos[topo++] = valor;

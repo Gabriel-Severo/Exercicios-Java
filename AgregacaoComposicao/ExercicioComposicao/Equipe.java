@@ -1,7 +1,7 @@
 public class Equipe {
     public static void main(String[] args) {
-        Funcionario f1 = new Funcionario(1, "João", 'M');
-        Funcionario f2 = new Funcionario(2, "Maria", 'F');
+        Funcionarios f1 = new Funcionarios(1, "João", 'M');
+        Funcionarios f2 = new Funcionarios(2, "Maria", 'F');
 
         f1.setDataAdmissao(new Data(30, 12, 2018));
         f1.setDataNascimento(new Data(29, 2, 1980));

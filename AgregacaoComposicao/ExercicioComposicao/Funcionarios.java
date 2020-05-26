@@ -1,11 +1,11 @@
-public class Funcionario {
+public class Funcionarios {
     private int id;
     private String nome;
     private char sexo;
     private Data dataNascimento;
     private Data dataAdmissao;
 
-    public Funcionario(int id, String nome, char sexo) {
+    public Funcionarios(int id, String nome, char sexo) {
         this.id = id;
         this.nome = nome;
         this.sexo = sexo;
