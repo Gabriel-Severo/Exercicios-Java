@@ -30,7 +30,7 @@ public class Paciente extends Pessoa {
     
     @Override
     public void imprimirFicha(){
-        System.out.println("Nome: " + (super.getSexo() == 'M' ? "Sr. " : "Sra. ") + super.getNome());
+        System.out.println((super.getSexo() == 'm' ? "Sr. " : "Sra. ") + super.getNome());
         System.out.println("Natural de: " + super.getNaturalidade());
         System.out.println("Fone: " + super.getContato().getTelefone() 
                             + " Email: " + super.getContato().getEmail());

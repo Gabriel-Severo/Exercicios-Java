@@ -21,25 +21,35 @@ public class Clinica {
             if(opcao == 1){
                 System.out.print("Digite o nome do médico(a): ");
                 String nome = s.nextLine();
-                System.out.print("Digite o sexo do médico(a) (M/F): ");
-                char sexo = s.next().charAt(0);
+                char sexo;
+                do{
+                    System.out.print("Digite o sexo do médico(a) (M/F): ");
+                    sexo = s.next().toLowerCase().charAt(0);
+                }while(sexo != 'm' && sexo != 'f');
                 s.nextLine();
                 System.out.print("Digite o crm do médico(a): ");
                 String crm = s.nextLine();
                 System.out.print("Digite a especialidade do médico(a): ");
                 String especialidade = s.nextLine();
                 Medico medico = new Medico(nome, sexo, crm, especialidade);
-                System.out.print("Digite o telefone do médico(a): ");
+                System.out.print("Digite o telefone do médico(a) (Deixe em branco caso não tenha): ");
                 String telefone = s.nextLine();
-                System.out.print("Digite o email do médico(a): ");
+                System.out.print("Digite o email do médico(a) (Deixe em branco caso não tenha): ");
                 String email = s.nextLine();
+                
+                if(telefone.equals("")) telefone = "-";
+                if(email.equals("")) email = "-";
+                
                 medico.setContato(new Contato(telefone, email));
                 pessoas.add(medico);
             }else if(opcao == 2){
                 System.out.print("Digite o nome do(a) paciente: ");
                 String nome = s.nextLine();
-                System.out.print("Digite o sexo do(a) paciente (M/F):");
-                char sexo = s.next().charAt(0);
+                char sexo;
+                do{
+                    System.out.print("Digite o sexo do(a) paciente (M/F):");
+                    sexo = s.next().toLowerCase().charAt(0);
+                }while(sexo != 'm' && sexo != 'f');
                 System.out.print("Digite a altura do(a) paciente: ");
                 double altura = s.nextDouble();
                 System.out.print("Digite o peso do(a) paciente: ");
@@ -49,10 +59,14 @@ public class Clinica {
                 s.nextLine();
                 String naturalidade = s.nextLine();
                 paciente.setNaturalidade(naturalidade);
-                System.out.print("Digite o telefone do(a) paciente");
+                System.out.print("Digite o telefone do(a) paciente (Deixe em branco caso não tenha): ");
                 String telefone = s.nextLine();
                 System.out.print("Digite o email do(a) paciente (Deixe em branco caso não tenha): ");
                 String email = s.nextLine();
+                
+                if(telefone.equals("")) telefone = "-";
+                if(email.equals("")) email = "-";
+                
                 paciente.setContato(new Contato(telefone, email));
                 pessoas.add(paciente);
             }else if(opcao == 3){
