@@ -49,10 +49,10 @@ public class Pessoa implements Comparable<Pessoa>{
     @Override
     public int compareTo(Pessoa pessoa){
         if(nascimento.isAfter(pessoa.nascimento)){
-            return -1;
+            return 1;
         }
         if(nascimento.isBefore(pessoa.nascimento)){
-            return 1;
+            return -1;
         }
         return 0;
     }

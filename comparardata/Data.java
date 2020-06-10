@@ -26,7 +26,6 @@ public class Data {
             System.out.print("Digite o minuto: ");
             int minuto = s.nextInt();
             LocalDateTime nascimento = LocalDateTime.of(ano, mes, dia, hora, minuto);
-            System.out.println(nascimento);
             Pessoa p = new Pessoa(nome, sexo, nascimento);
             pessoas.add(p);
             s.nextLine();
